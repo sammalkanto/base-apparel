@@ -1,0 +1,54 @@
+@media (max-width: 1024px) {
+    .main {
+        flex-direction: column;
+
+        > .mobile-header {
+            display: flex;
+            padding: 24px;
+
+            > .mobile-logo {
+                width: 120px;
+            }
+        }
+
+        > .mobile-hero {
+            display: block;
+            max-height: 500px;
+            object-fit: cover;
+        }
+
+        > .content {
+            width: auto;
+            height: 100%;
+
+            > .wrapper {
+                padding: 48px 32px;
+                width: auto;
+
+                > .desktop-logo {
+                    display: none;
+                }
+
+                > .box {
+                    > .titles {
+                        text-align: center;
+                    }
+
+                    > .description {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        .desktop-hero {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .titles {
+        font-size: 1.2rem !important;
+    }
+}

@@ -1,0 +1,160 @@
+@import 'config.scss';
+
+body {
+    height: 100vh;
+}
+
+#root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+
+    > .mobile-header {
+        display: none;
+    }
+
+    > .mobile-hero {
+        display: none;
+    }
+
+    > .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        position: relative;
+        background: $linearSecondary;
+        z-index: 1;
+
+        > .background {
+            position: absolute;
+            width: 100%;
+            z-index: 2;
+            height: 100%;
+        }
+
+        > .wrapper {
+            z-index: 3;
+            width: 60%;
+            max-width: 450px;
+            height: 100%;
+            padding: 64px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 128px;
+
+            > .desktop-logo {
+                width: 160px;
+            }
+
+            > .box {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+
+                > .titles {
+                    font-size: 2rem;
+
+                    > .title:nth-child(1) {
+                        color: $desaturatedRed;
+                        font-weight: 300;
+                        letter-spacing: 8px;
+                    }
+
+                    > .title:nth-child(2), .title:nth-child(3) {
+                        letter-spacing: 12px;
+                        font-weight: 600;
+                    }
+                }
+
+                > .description {
+                    color: $desaturatedRed;
+                    line-height: 1.5rem;
+                    font-weight: 400;
+                }
+
+                > form {
+                    display: flex;
+                    width: 100%;
+                    position: relative;
+
+                    > input {
+                        font-size: 1rem;
+                        padding: 15px 32px;
+                        width: 100%;
+                        border-radius: 32px;
+                        border: 1px solid $desaturatedRed;
+                        background: $linearSecondary;
+
+                        &.error {
+                            outline: 2px solid $softRed;
+                        }
+
+                        &::placeholder {
+                            color: $desaturatedRed;
+                        }
+
+                        &:focus-visible {
+                            outline-color: $desaturatedRed;
+                        }
+                    }
+
+                    > .icon {
+                        position: absolute;
+                        top: 13px;
+                        right: 100px;
+                        display: none;
+
+                        &.error {
+                            display: block;
+                        }
+                    }
+
+                    > button {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: absolute;
+                        padding: 15px 36px;
+                        border: none;
+                        border-radius: 32px;
+                        right: -0.5px;
+                        top: -0.5px;
+                        background: $linearPrimary;
+                        cursor: pointer;
+
+                        > img {
+                            height: 20px;
+                            width: 14px;
+                        }
+                    }
+
+                    > .message {
+                        position: absolute;
+                        bottom: -24px;
+                        left: 32px;
+                        font-size: 0.9rem;
+                        color: $softRed;
+                    }
+                }
+            }
+        }
+    }
+
+    > .desktop-hero {
+        height: 100%;
+        width: 40%;
+        object-fit: cover;
+    }
+}
+
+@import 'media.scss';
